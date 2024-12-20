@@ -9,10 +9,14 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private Transform ARCAM;
     [SerializeField] private TMP_Text debugArea;
     [SerializeField] private ObjectPlacer objectPlacer;
+    [SerializeField] private LayerMask _AR_layerMask;
     [Header("Selection References")]
     [SerializeField] private Transform BlueTarget;
     [SerializeField] private Transform OrangeTarget;
     [SerializeField] private GameObject ShuffleButton;
+
+    [Header("Object Customization")] 
+    public GameObject CustomisationMenu;
 
     public MeshFilter SelectionMeshObject;
     
@@ -34,7 +38,7 @@ public class InteractionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(ARCAM.position, ARCAM.forward, out RaycastHit hit))
+        if (Physics.Raycast(ARCAM.position, ARCAM.forward, out RaycastHit hit, _AR_layerMask))
         {
             if (_InSelection)
             {

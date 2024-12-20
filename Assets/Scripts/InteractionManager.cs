@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -11,8 +12,9 @@ public class InteractionManager : MonoBehaviour
     [Header("Selection References")]
     [SerializeField] private Transform BlueTarget;
     [SerializeField] private Transform OrangeTarget;
+    [SerializeField] private GameObject ShuffleButton;
 
-    [SerializeField] private MeshFilter SelectionMeshObject;
+    public MeshFilter SelectionMeshObject;
     
     //[SerializeField] private GameObject SelectionPoints;
 
@@ -26,6 +28,7 @@ public class InteractionManager : MonoBehaviour
         OrangeTarget.gameObject.SetActive(false);
         BlueTarget.gameObject.SetActive(true);
         SelectionMeshObject.gameObject.SetActive(false);
+        ShuffleButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -95,6 +98,7 @@ public class InteractionManager : MonoBehaviour
             
             SelectionMeshObject.gameObject.SetActive(true);
             
+            ShuffleButton.SetActive(true);
             objectPlacer.PlaceObject(SelectionMesh,centerPoint);
         }
         else
@@ -102,6 +106,8 @@ public class InteractionManager : MonoBehaviour
             _InSelection = true;
             OrangeTarget.gameObject.SetActive(true);
             SelectionMeshObject.gameObject.SetActive(false);
+            ShuffleButton.SetActive(false);
+            objectPlacer.ResetNewObject();
         }
     }
 }

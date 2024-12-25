@@ -96,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6757233728672999906}
   - component: {fileID: 2599342391735506578}
+  - component: {fileID: 985037453154537725}
   m_Layer: 0
   m_Name: Sofa
   m_TagString: Untagged
@@ -141,6 +142,27 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   cushionRenderer: {fileID: 8754716261379781809}
   supportRenderer: {fileID: 5450778078989723398}
+--- !u!65 &985037453154537725
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8900495899385116349}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.1221926, y: 3.442074, z: 2.9090335}
+  m_Center: {x: 0.046791136, y: 1.2210375, z: 0.04463926}
 --- !u!1 &9183581312427241240
 GameObject:
   m_ObjectHideFlags: 0

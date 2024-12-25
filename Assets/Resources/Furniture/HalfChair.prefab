@@ -96,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7814606887511635944}
   - component: {fileID: -6865057650513774950}
+  - component: {fileID: 5788544621724340661}
   m_Layer: 0
   m_Name: HalfChair
   m_TagString: Untagged
@@ -141,6 +142,27 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   cushionRenderer: {fileID: 1064769538871991187}
   supportRenderer: {fileID: 515656665788969339}
+--- !u!65 &5788544621724340661
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833671290247842151}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2964385, y: 3.6325119, z: 2.437174}
+  m_Center: {x: 0.076282695, y: 1.3162564, z: -0.07332541}
 --- !u!1 &4295017336451351353
 GameObject:
   m_ObjectHideFlags: 0

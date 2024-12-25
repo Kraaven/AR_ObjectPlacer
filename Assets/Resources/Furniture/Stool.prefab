@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4841672569708262474}
   - component: {fileID: 3418301813594099719}
+  - component: {fileID: 5073959584395186792}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
@@ -227,3 +228,24 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   cushionRenderer: {fileID: 8840135813063844438}
   supportRenderer: {fileID: 4009533897344378639}
+--- !u!65 &5073959584395186792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955737253006680531}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2964385, y: 2.8404617, z: 2.437174}
+  m_Center: {x: 0.076282695, y: 0.9202297, z: -0.07332541}

@@ -19,10 +19,10 @@
                 {
                     "name": "",
                     "id": "9b0e5240-ead4-4853-9295-d3fa09f56fd3",
-                    "path": "",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Phone",
                     "action": "Tap",
                     "isComposite": false,
                     "isPartOfComposite": false

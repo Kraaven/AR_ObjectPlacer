@@ -2085,6 +2085,7 @@ GameObject:
   - component: {fileID: 1737116292}
   - component: {fileID: 1737116294}
   - component: {fileID: 1737116295}
+  - component: {fileID: 1737116296}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2107,9 +2108,6 @@ MonoBehaviour:
   ARCAM: {fileID: 570462225}
   debugArea: {fileID: 1015147603}
   objectPlacer: {fileID: 1737116294}
-  _ANTI_AR_layerMask:
-    serializedVersion: 2
-    m_Bits: 128
   BlueTarget: {fileID: 461663312}
   OrangeTarget: {fileID: 1927881781}
   ShuffleButton: {fileID: 345323287}
@@ -2161,6 +2159,18 @@ MonoBehaviour:
   _mainCamera: {fileID: 570462230}
   ActionReference: {fileID: 3793514905335380393, guid: 3140dde44514f6f47a7cd737bda9ef8d, type: 3}
   inputField: {fileID: 1846017810}
+--- !u!114 &1737116296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737116291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110bffaf4da45db45b036934c45ffe89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1846017808
 GameObject:
   m_ObjectHideFlags: 0

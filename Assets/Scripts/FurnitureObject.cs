@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class FurnitureObject : MonoBehaviour
@@ -11,8 +12,15 @@ public class FurnitureObject : MonoBehaviour
     public Bounds FurnitureBounds;
     [SerializeField] private MeshRenderer cushionRenderer;
     [SerializeField] private MeshRenderer supportRenderer;
+    [Header("API")] private OpenAI API;
+    private bool GenerationRunning;
 
     private Texture2D generatedTexture2D;
+
+    private void Start()
+    {
+        API = FindFirstObjectByType<OpenAI>();
+    }
 
     public Bounds GetBounds()
     {
@@ -49,7 +57,19 @@ public class FurnitureObject : MonoBehaviour
 
     public void SetCushionMaterial(string Mat)
     {
-        Debug.Log($"Set Material to : {Mat}");
+        if(GenerationRunning) return;
+
+        GenerationRunning = true;
+        // Debug.Log($"Set Material to : {Mat}");
+        API.GenerateMaterial(Mat, (Material M) =>
+        {
+            cushionRenderer.material = M;
+            GenerationRunning = false;
+        }, () =>
+        { 
+            Debug.Log("Material Generation Failed");
+            GenerationRunning = false;
+        });
     }
 
 

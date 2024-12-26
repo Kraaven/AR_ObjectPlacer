@@ -55,13 +55,13 @@ public class FurnitureObject : MonoBehaviour
         supportRenderer.material = material;
     }
 
-    public void SetCushionMaterial(string Mat, string Col)
+    public void SetCushionMaterial(string Mat, string Col, string Tex)
     {
         if(GenerationRunning) return;
 
         GenerationRunning = true;
         // Debug.Log($"Set Material to : {Mat}");
-        API.GenerateMaterial(Mat, Col, (Material M) =>
+        API.GenerateMaterial(Mat, Col, Tex, (Material M) =>
         {
             cushionRenderer.material = M;
             GenerationRunning = false;

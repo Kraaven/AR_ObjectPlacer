@@ -10,11 +10,11 @@ using UnityEngine.Networking;
 public class OpenAI : MonoBehaviour
 {
      private const string ApiUrl = "https://api.openai.com/v1/images/generations";
-     private const string ApiKey = "API KEY"; 
+     private const string ApiKey = "Key"; 
     [System.Serializable]
     public class DalleRequest
     {
-        public string model = "dall-e-3";
+        public string model = "dall-e-2";
         public string prompt = "A cute baby sea otter";
         public int n = 1;
         public string size = "1024x1024";
@@ -51,7 +51,7 @@ public class OpenAI : MonoBehaviour
     {
         var Req = new Dictionary<string, string>()
         {
-            { "Use", "3D Model" },
+            {"Use", "3D Model" },
             {"Description of texture", "fuzzy"},
             {"Colour", "turquoise"},
             {"Material", " fabric"},
@@ -71,10 +71,11 @@ public class OpenAI : MonoBehaviour
         return Req;
     }
 
-    public void GenerateMaterial(string RequestedMat, string col, Action<Material> callback, Action Fallback)
+    public void GenerateMaterial(string RequestedMat, string col, string tex, Action<Material> callback,
+        Action Fallback)
     {
         //string P = $"a 2D seamless texture of {RequestedMat}";
-        string P = JsonConvert.SerializeObject(GetMaterialRequest(RequestedMat,col,"Fuzzy"));
+        string P = JsonConvert.SerializeObject(GetMaterialRequest(RequestedMat,col,tex));
         StartCoroutine(GenerateImage(P,callback,Fallback));  
     }
 

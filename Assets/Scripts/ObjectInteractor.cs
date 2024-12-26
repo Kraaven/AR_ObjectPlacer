@@ -25,6 +25,7 @@ public class ObjectInteractor : MonoBehaviour
     [Header("Inputs")]
     [SerializeField] private TMP_InputField MatField;
     [SerializeField] private TMP_InputField ColorField;
+    [SerializeField] private TMP_InputField TextureField;
     //[SerializeField] private TMP confirmationbutton;
     
     public void OnTap(InputAction.CallbackContext context)
@@ -48,8 +49,8 @@ public class ObjectInteractor : MonoBehaviour
 
     public void RequestMaterialChange()
     {
-        if (ColorField.text == "" && MatField.text == "") return;
-        CurrentObject.SetCushionMaterial(MatField.text,ColorField.text);
+        if (ColorField.text == "" && MatField.text == "" && TextureField.text == "") return;
+        CurrentObject.SetCushionMaterial(MatField.text,ColorField.text, TextureField.text);
         _interactionManager.CustomisationMenu.SetActive(false);
     }
     

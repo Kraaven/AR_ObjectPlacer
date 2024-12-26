@@ -10,7 +10,7 @@ using UnityEngine.Networking;
 public class OpenAI : MonoBehaviour
 {
      private const string ApiUrl = "https://api.openai.com/v1/images/generations";
-     //private const string ApiKey = "API Key Here"; 
+     private const string ApiKey = "API KEY"; 
     [System.Serializable]
     public class DalleRequest
     {
@@ -47,14 +47,34 @@ public class OpenAI : MonoBehaviour
         }
     }
 
-    // void Start()
-    // {
-    //     StartCoroutine(GenerateImage());
-    // }
-
-    public void GenerateMaterial(string RequestedMat, Action<Material> callback, Action Fallback)
+    public Dictionary<string, string> GetMaterialRequest()
     {
-        string P = $"a 2D seamless texture of {RequestedMat}";
+        var Req = new Dictionary<string, string>()
+        {
+            { "Use", "3D Model" },
+            {"Description of texture", "fuzzy"},
+            {"Colour", "turquoise"},
+            {"Material", " fabric"},
+            {"Additional Info", "Flat 2D image of the texture."}
+        };
+
+        return Req;
+    }
+
+    public Dictionary<string, string> GetMaterialRequest(string Material, string Color, string texture)
+    {
+        var Req = GetMaterialRequest();
+        Req["Material"] = Material;
+        Req["Colour"] = Color;
+        Req["Description of texture"] = texture;
+
+        return Req;
+    }
+
+    public void GenerateMaterial(string RequestedMat, string col, Action<Material> callback, Action Fallback)
+    {
+        //string P = $"a 2D seamless texture of {RequestedMat}";
+        string P = JsonConvert.SerializeObject(GetMaterialRequest(RequestedMat,col,"Fuzzy"));
         StartCoroutine(GenerateImage(P,callback,Fallback));  
     }
 
@@ -131,25 +151,6 @@ public class OpenAI : MonoBehaviour
         }
     }
     
-    private void SaveBase64ImageToFile(string base64String, string fileName)
-    {
-        try
-        {
-            // Convert Base64 string to byte array
-            byte[] imageBytes = Convert.FromBase64String(base64String);
-
-            // Get the path to save the file
-            string filePath = Path.Combine(Application.dataPath, fileName);
-
-            // Write the byte array to a file
-            File.WriteAllBytes(filePath, imageBytes);
-
-            Debug.Log("Image saved to: " + filePath);
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("Error saving Base64 image to file: " + ex.Message);
-        }
-    }
+    
     
 }

@@ -22,8 +22,9 @@ public class ObjectInteractor : MonoBehaviour
         ActionReference.action.started -= OnTap;
     }
 
-
-    [SerializeField] private TMP_InputField inputField;
+    [Header("Inputs")]
+    [SerializeField] private TMP_InputField MatField;
+    [SerializeField] private TMP_InputField ColorField;
     //[SerializeField] private TMP confirmationbutton;
     
     public void OnTap(InputAction.CallbackContext context)
@@ -47,7 +48,8 @@ public class ObjectInteractor : MonoBehaviour
 
     public void RequestMaterialChange()
     {
-        CurrentObject.SetCushionMaterial(inputField.text);
+        if (ColorField.text == "" && MatField.text == "") return;
+        CurrentObject.SetCushionMaterial(MatField.text,ColorField.text);
         _interactionManager.CustomisationMenu.SetActive(false);
     }
     
